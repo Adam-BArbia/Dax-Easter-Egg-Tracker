@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const settings = result.settings || {};
             settings.notificationsEnabled = e.target.checked;
             chrome.storage.local.set({ settings });
-            console.log('Notifications toggled:', e.target.checked);
         });
     });
 
@@ -27,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const settings = result.settings || {};
             settings.detectionSensitivity = e.target.value;
             chrome.storage.local.set({ settings });
-            console.log('Detection sensitivity changed:', e.target.value);
         });
     });
 

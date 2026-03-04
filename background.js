@@ -1,11 +1,8 @@
 // Background script - manages state and score tracking
-console.log('🦆 Dax Tracker background script loaded');
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    console.log('📨 Background received message:', request.type);
     
     if (request.type === 'EASTER_EGG_SIGHTING') {
-        console.log('🎉 Processing easter egg sighting:', request.easterEgg);
         // Get current scores
         chrome.storage.local.get(
             ['totalScore', 'recentSightings', 'loggedEasterEggLibrary'],
@@ -14,18 +11,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                 const incomingEggName = (request.easterEgg && request.easterEgg.name) || '';
 
                 if (!incomingEggName) {
-                    console.log('⚠️ Missing egg name in request');
                     sendResponse({ success: false, reason: 'missing_egg_name' });
                     return;
                 }
 
                 if (loggedEasterEggLibrary.includes(incomingEggName)) {
-                    console.log('⏭️ Duplicate egg:', incomingEggName);
                     sendResponse({ success: false, duplicate: true });
                     return;
                 }
-
-                console.log('✅ New egg! Updating score...');
 
                 const totalScore = (result.totalScore || 0) + 1;
                 const recentSightings = result.recentSightings || [];
@@ -50,7 +43,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                     recentSightings: recentSightings,
                     loggedEasterEggLibrary: [...loggedEasterEggLibrary, incomingEggName]
                 }, () => {
-                    console.log(`✅ Score updated: ${totalScore} total`);
                     
                     // Update badge to show current score
                     chrome.action.setBadgeText({ text: totalScore.toString() });

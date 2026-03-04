@@ -3,6 +3,13 @@
   "name": "Dax Easter Egg Tracker",
   "version": "1.0.0",
   "description": "Track every time you encounter a Dax easter egg on DuckDuckGo!",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "dax-tracker@adambarbia.dev",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {}
+    }
+  },
   "permissions": [
     "storage"
   ],
@@ -27,7 +34,6 @@
   "icons": {
     "16": "icons/dax-16.png",
     "48": "icons/dax-48.png",
-    "128": "icons/dax-128.png",
-    "256": "icons/dax-256.png"
+    "128": "icons/dax-128.png"
   }
 }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Easter Egg Tracker</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="settings-page">
+    <div class="settings-container">
+        <div class="settings-header">
+            <button id="backBtn" class="back-btn">← Back</button>
+            <h1>⚙️ Settings</h1>
+        </div>
+
+        <div class="settings-content">
+            <div class="settings-section">
+                <h3>Notifications</h3>
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span>Enable Notifications</span>
+                        <p>Show alerts when eggs are found</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="notificationsToggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Display</h3>
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span>Dark Mode</span>
+                        <p>Current theme (dark mode enabled)</p>
+                    </div>
+                    <span class="badge">Active</span>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Detection</h3>
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span>Detection Sensitivity</span>
+                        <p>How strict easter egg detection should be</p>
+                    </div>
+                    <select id="sensitivitySelect">
+                        <option value="strict">Strict (Unique Only)</option>
+                        <option value="normal" selected>Normal</option>
+                        <option value="loose">Loose (Count Duplicates)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Data Management</h3>
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span>Clear All Data</span>
+                        <p>Delete all collected eggs and stats</p>
+                    </div>
+                    <button id="clearCacheBtn" class="btn-danger">Clear</button>
+                </div>
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span>Export Collection</span>
+                        <p>Download your egg collection as JSON</p>
+                    </div>
+                    <button id="exportBtn" class="btn-secondary">Export</button>
+                </div>
+            </div>
+
+            <div class="settings-footer">
+                <p>Easter Egg Tracker v1.0.0</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+</html>

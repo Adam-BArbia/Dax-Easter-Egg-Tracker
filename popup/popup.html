@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dax Tracker</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-top">
+                <h1>🦆 Easter Egg Tracker</h1>
+                <button id="settingsBtn" class="settings-btn" title="Settings">⚙️</button>
+            </div>
+            <div class="unique-count">
+                <div class="unique-number" id="totalCount">0</div>
+                <p>Unique Eggs Collected</p>
+            </div>
+        </div>
+        
+        <div class="gallery-controls">
+            <input type="text" id="searchInput" placeholder="Search eggs..." class="search-input">
+            <div class="sort-buttons">
+                <button class="sort-btn active" data-sort="date">Date</button>
+                <button class="sort-btn" data-sort="name">Name</button>
+            </div>
+        </div>
+        
+        <div class="gallery-section">
+            <h3>🏆 Your Collection</h3>
+            <div id="galleryList" class="gallery-list">
+                <p class="gallery-empty">Search on DuckDuckGo to discover easter eggs!</p>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button id="clearAllBtn" class="btn-clear">Clear All</button>
+        </div>
+    </div>
+
+    <!-- Egg Preview Modal -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">✕</button>
+            <div class="modal-body">
+                <div class="preview-icon" id="previewIcon"></div>
+                <h2 id="previewName"></h2>
+                <div class="preview-stats">
+                    <div class="preview-stat">
+                        <span class="stat-label">First Found</span>
+                        <span class="stat-value" id="previewFirstFound"></span>
+                    </div>
+                    <div class="preview-stat">
+                        <span class="stat-label">Found</span>
+                        <span class="stat-value" id="previewFoundCount"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

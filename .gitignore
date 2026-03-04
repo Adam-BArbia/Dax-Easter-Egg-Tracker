@@ -1,0 +1,30 @@
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Firefox Extension Development
+web-ext-artifacts/
+*.xpi
+*.zip
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies (if using npm/node later)
+node_modules/
+
+# Temporary files
+*.tmp
+.tmp/
+
+# GitHub folder (contains GitHub-specific files that should not be tracked)
+.github/

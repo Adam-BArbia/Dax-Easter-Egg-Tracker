@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Dax Easter Egg Tracker",
+  "version": "1.0.0",
+  "description": "Track every time you encounter a Dax easter egg on DuckDuckGo!",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://duckduckgo.com/*",
+    "*://www.duckduckgo.com/*"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Dax Tracker"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://duckduckgo.com/*", "*://www.duckduckgo.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "icons/dax-16.png",
+    "48": "icons/dax-48.png",
+    "128": "icons/dax-128.png",
+    "256": "icons/dax-256.png"
+  }
+}
